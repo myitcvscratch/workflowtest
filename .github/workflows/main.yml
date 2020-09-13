@@ -1,0 +1,16 @@
+# Workflow that runs on a new commit to main
+on:
+  push:
+    branches:
+      - main
+
+name: Test
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [ubuntu-latest]
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - run: env
