@@ -13,4 +13,4 @@ jobs:
         platform: [ubuntu-latest]
     runs-on: ${{ matrix.platform }}
     steps:
-      - run: env
+      - run: env | grep GITHUB
