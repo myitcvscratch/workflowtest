@@ -1,0 +1,13 @@
+# Workflow that runs on a new commit to main
+on: [release]
+
+name: Release
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [ubuntu-latest]
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - run: env | grep GITHUB
